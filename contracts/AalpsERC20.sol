@@ -47,14 +47,14 @@ contract AalpsERC20 {
 		_;
 	}
 
-    /**
-    * The onus is on the proposer to ensure that a reasonable deadline has been selected. Obviously it is not useful to have a deadline
-    * that is shorter than the average time of a block. The proposer should also consider the time it takes to execute the swap on the
-    * other chain plus a reasonable number of confirmations to avoid orphaned blocked. For example, if the proposer is swapping aTokens 
-    * on Avalanche for aTokens on Ethereum, they should consider the time it takes to execute the swap on Ethereum.
-    * It could be useful to take an opinionated approach to this and set a minimum deadline on a front-end that is powering this system,
-    * but for simplicity we leave it up to the proposer to decide.
-    */
+	/**
+	 * The onus is on the proposer to ensure that a reasonable deadline has been selected. Obviously it is not useful to have a deadline
+	 * that is shorter than the average time of a block. The proposer should also consider the time it takes to execute the swap on the
+	 * other chain plus a reasonable number of confirmations to avoid orphaned blocked. For example, if the proposer is swapping aTokens
+	 * on Avalanche for aTokens on Ethereum, they should consider the time it takes to execute the swap on Ethereum.
+	 * It could be useful to take an opinionated approach to this and set a minimum deadline on a front-end that is powering this system,
+	 * but for simplicity we leave it up to the proposer to decide.
+	 */
 
 	modifier deadlineGTNow(uint32 _deadline) {
 		//It's ok to compare uint32 with uint256 here because solidity will implicitly convert uint32 to uint256 for the comparison
@@ -146,12 +146,12 @@ contract AalpsERC20 {
 		);
 
 		// We should not allow numerous AALPs with the same exact parameters (complete duplicates)
-        // Otherwise there will be no way to index them and an overwrite vulnerability will be present
+		// Otherwise there will be no way to index them and an overwrite vulnerability will be present
 		if (alreadyExistsAALPSInstance(agreementId)) {
 			revert("Contract already exists");
 		}
 
-        //TransferFrom and then update to avoid reentrancy
+		//TransferFrom and then update to avoid reentrancy
 		if (
 			!ERC20(_erc20Contract).transferFrom(msg.sender, address(this), _tokenAmount)
 		) {
@@ -183,8 +183,8 @@ contract AalpsERC20 {
 
 	/**
 	 * @dev PartyB claims the tokens locked by PartyA by providing the secret
-     * that was used in the contract creation. This is only possible if PartyA has revealed
-     * the secret to PartyB by claiming PartyB's funds
+	 * that was used in the contract creation. This is only possible if PartyA has revealed
+	 * the secret to PartyB by claiming PartyB's funds
 	 *
 	 * @param _aalpsInstanceId The unique identifier for this AALPS instance.
 	 * @param _key to be checked against lock using sha256.
@@ -203,10 +203,10 @@ contract AalpsERC20 {
 	{
 		AalpsLib.AALPSProposal storage instance = aalpsInstances[_aalpsInstanceId];
 
-        //make that key public
+		//make that key public
 		instance.key = _key;
 
-        //update tokensWithdrawn before transfer to avoid reentrancy
+		//update tokensWithdrawn before transfer to avoid reentrancy
 		instance.tokensWithdrawn = true;
 		ERC20(instance.erc20Contract).transfer(instance.partyB, instance.tokenAmount);
 		emit AalpsLib.AALPSERC20Claimed(_aalpsInstanceId);
