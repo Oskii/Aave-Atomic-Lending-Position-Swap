@@ -14,13 +14,13 @@ const config: HardhatUserConfig = {
 	},
 	networks: {
 		// Example of Ethereum Mainnet
-		mainnet: {
+		mumbai: {
 			url: process.env.MUMBAI_RPC_URL,
 			accounts:
 				process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
 		},
 		// Example of Rinkeby Testnet
-		rinkeby: {
+		sepolia: {
 			url: process.env.SEPOLIA_RPC_URL,
 			accounts:
 				process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
