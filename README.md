@@ -70,6 +70,7 @@ Before you get started, ensure you have the following installed:
 - I used WSL2 as my terminal
 
 ## Installation
+
 To set up the Atomic Aave Lending Swap project on your local machine, follow these steps:
 
 1. Ensure you have the prerequisites above
@@ -77,17 +78,21 @@ To set up the Atomic Aave Lending Swap project on your local machine, follow the
 ```bash
 npm install
 ```
+
 ## Simulate an AALPS locally via hardhat with Mock aTokens
-AALPS works in the exact same way on 1 chain or in a multi-chain setting. It does not need to know which chains it is operating on. In this local simulation, two parties swap mock aDai and aWBTC using AALPS. 
+
+AALPS works in the exact same way on 1 chain or in a multi-chain setting. It does not need to know which chains it is operating on. In this local simulation, two parties swap mock aDai and aWBTC using AALPS.
 
 To simulate the swap locally:
 
 Open a second terminal and spin up a hardhat node
+
 ```bash
 npx hardhat node
 ```
 
 Then in the first terminal type
+
 ```bash
 npx hardhat run scripts/simulate.ts
 ```
