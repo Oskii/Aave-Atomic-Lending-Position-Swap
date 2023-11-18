@@ -148,7 +148,7 @@ contract AalpsERC20 {
 		// We should not allow numerous AALPs with the same exact parameters (complete duplicates)
 		// Otherwise there will be no way to index them and an overwrite vulnerability will be present
 		if (alreadyExistsAALPSInstance(agreementId)) {
-			revert("Contract already exists");
+			revert("Duplicate AALPS already exists");
 		}
 
 		//TransferFrom and then update to avoid reentrancy

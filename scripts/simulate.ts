@@ -84,12 +84,14 @@ async function main() {
 	console.log(`[Party B]: Approved tokens`);
 
 	// Party A creates a new AALPS proposal
-	const secret = "mysecuresecret!!!#@904saljkd";
-	const bytes32EncodedSecret = hre.ethers.utils.formatBytes32String(secret);
+	const secretSeed = "mysecuresecret!!!#@904saljkd";
+	const bytes32EncodedSecret = hre.ethers.utils.sha256(
+		hre.ethers.utils.toUtf8Bytes(secretSeed),
+	);
+
 	const secretHash = hre.ethers.utils.sha256(bytes32EncodedSecret);
 	const deadline = Math.floor(Date.now() / 1000) + 60 * 60 * 5; // 5 hours from now
 
-	console.log(`[Party A]: Got secret ${secret}`);
 	console.log(`[Party A]: Bytes32 encoded secret is  ${bytes32EncodedSecret}`);
 	console.log(`[Party A]: Got secretHash ${secretHash}`);
 	console.log(`[Party A]: Got deadline ${deadline}`);
