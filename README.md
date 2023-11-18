@@ -60,6 +60,16 @@ AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing 
 - Cross-chain atomic swap functionality between Ethereum Sepolia testnet and Polygon Mumbai testnet.
 - Secure and trustless cryptographic method, which we call **the Atomic Aave Lending Swap method**.
 
+## Tests Passing
+
+Run the tests by typing the following from the root directory
+```bash
+npx hardhat test
+```
+
+![image](https://github.com/Oskii/aave-cross-chain-lending-position-swaps/assets/30426408/e9045dbe-58f2-4e6c-b88b-9031907263f3)
+
+
 ## Prerequisites
 
 Before you get started, ensure you have the following installed:
