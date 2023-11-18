@@ -1,0 +1,13 @@
+{
+  "tabWidth": 1,
+  "useTabs": true,
+  "overrides": [
+    {
+      "files": "*.sol",
+      "options": {
+        "tabWidth": 1,
+        "useTabs": true
+      }
+    }
+  ]
+}
