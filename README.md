@@ -10,7 +10,54 @@ For example, someone can use an AALPS to trustlessly swap their aTokens on Avala
 
 We refer to the mechanism as the Atomic Aave Lending Position Swap (AALPS). The outcome is full interoperability between any EVM chains for trading Aave liquidity positions. ✨👻
 
-### Example Usage
+## Prerequisites
+
+Before you get started, ensure you have the following installed:
+
+- Node.js (version 16.20.0 or higher)
+- NPM (Node Package Manager)
+- Hardhat (version 2.19.1)
+- I used WSL2 as my terminal
+
+## Installation
+
+To set up the Atomic Aave Lending Swap project on your local machine, follow these steps:
+
+1. Ensure you have the prerequisites above
+
+```bash
+npm install
+```
+
+## Simulate an AALPS locally via hardhat with Mock aTokens
+
+AALPS works in the exact same way on 1 chain or in a multi-chain setting. It does not need to know which chains it is operating on. In this local simulation, two parties swap mock aDai and aWBTC using AALPS.
+
+To simulate the swap locally:
+
+Open a second terminal and spin up a hardhat node
+
+```bash
+npx hardhat node
+```
+
+Then in the first terminal type
+
+```bash
+npx hardhat run scripts/simulate.ts
+```
+
+## Tests Passing
+
+Run the tests by typing the following from the root directory
+```bash
+npx hardhat test
+```
+
+![image](https://github.com/Oskii/aave-cross-chain-lending-position-swaps/assets/30426408/e9045dbe-58f2-4e6c-b88b-9031907263f3)
+
+
+### Example Use Case
 
 - Jimmy has an AaveV3 lending position of 50 DAI on Ethereum, and so holds 50 aDAI.
 - Sandra has an AaveV3 lending position of 0.001 WBTC on Arbitrum, and so holds aWBTC.
@@ -60,49 +107,5 @@ AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing 
 - Cross-chain atomic swap functionality between Ethereum Sepolia testnet and Polygon Mumbai testnet.
 - Secure and trustless cryptographic method, which we call **the Atomic Aave Lending Swap method**.
 
-## Tests Passing
-
-Run the tests by typing the following from the root directory
-```bash
-npx hardhat test
-```
-
-![image](https://github.com/Oskii/aave-cross-chain-lending-position-swaps/assets/30426408/e9045dbe-58f2-4e6c-b88b-9031907263f3)
 
 
-## Prerequisites
-
-Before you get started, ensure you have the following installed:
-
-- Node.js (version 16.20.0 or higher)
-- NPM (Node Package Manager)
-- Hardhat (version 2.19.1)
-- I used WSL2 as my terminal
-
-## Installation
-
-To set up the Atomic Aave Lending Swap project on your local machine, follow these steps:
-
-1. Ensure you have the prerequisites above
-
-```bash
-npm install
-```
-
-## Simulate an AALPS locally via hardhat with Mock aTokens
-
-AALPS works in the exact same way on 1 chain or in a multi-chain setting. It does not need to know which chains it is operating on. In this local simulation, two parties swap mock aDai and aWBTC using AALPS.
-
-To simulate the swap locally:
-
-Open a second terminal and spin up a hardhat node
-
-```bash
-npx hardhat node
-```
-
-Then in the first terminal type
-
-```bash
-npx hardhat run scripts/simulate.ts
-```
