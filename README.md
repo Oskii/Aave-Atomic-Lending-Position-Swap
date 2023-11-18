@@ -12,7 +12,10 @@ We refer to the mechanism as the Atomic Aave Lending Position Swap (AALPS). The 
 
 ### Example Usage
 
-Jimmy on Ethereum has an AaveV3 lending position of 50 DAI, and so holds 50 aDAI. Sandra on Arbitrum has an AaveV3 lending position of 0.001 WBTC, and so holds aWBTC. Both Jimmy and Sandra agree that they would like to exchange positions with each other, and use AALPS to trustlessly and securely do so.
+- Jimmy has an AaveV3 lending position of 50 DAI on Ethereum, and so holds 50 aDAI. 
+- Sandra has an AaveV3 lending position of 0.001 WBTC on Arbitrum, and so holds aWBTC. 
+
+Both Jimmy and Sandra agree that they would like to exchange positions with each other, and use AALPS to trustlessly and securely exchange their positions. Even though their positions are cross-chain and using different assets, Jimmy and Sandra are able to exchange their positions trustlessly and securely.
 
 ## How does it work?
 AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing of a cryptographic secret and time-constraints on specific actions. Here are the steps for completing an AALPS. It ensures that all parties funds' remain safe throughout the lifecycle of the transaction.
