@@ -15,17 +15,17 @@ AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing 
 
 1. Agreement Creation:
 
-- Party A initiates the process by creating a secure agreement on their blockchain. This agreement includes a cryptographic challenge, which can be thought of as a secret code or puzzle, that only they know the solution to initially.
+- Party A initiates the process by locking funds on their blockchain. This lock includes a cryptographic challenge, whose solution is a secret code, that only they know the solution to initially. If Party B learns this secret within the deadline, they may unlock these funds. 
 - The agreement also specifies a deadline by which the transaction must be completed.
 
 2. Agreement Commitment by Party B:
 
-- Party B, upon reviewing the terms, engages in the agreement by creating a similar agreement on their blockchain, referencing the cryptographic challenge set by Party A.
-- Party B's agreement also includes a deadline, typically set earlier than Party A's deadline, to ensure that Party A has enough time to respond.
+- Party B, upon reviewing the locked assets, engages in the agreement by creating a similar agreement on their blockchain, referencing the cryptographic challenge set by Party A.
+- Party B's agreement also includes a deadline, which is set earlier than Party A's deadline, to ensure that Party A has enough time to respond.
 
-3. Asset Locking:
+3. Asset Locked:
 
-- Both parties then transfer their respective assets into their respective agreements. These assets are effectively locked and cannot be accessed by anyone else.
+- Both parties' assets are now effectively locked and cannot be accessed by anyone else.
 - The assets will only be released when the cryptographic challenge is correctly solved.
 
 4. Challenge Solution and Asset Exchange:
