@@ -4,11 +4,11 @@
 ## Introduction
 Welcome to the Atomic Aave Lending Position Swap (AALPS) project! 
 
-This project demonstrates a completely trustless, decentralized, cryptographically secure protocol for cross-chain atomic swaps of Aave lending positions (aTokens). It enables holders of lending positions (aTokens) in Aave to seamlessly exchange aTokens for other aTokens, or any ERC20 token between any chain that supports AaveV3. 
+This project demonstrates a completely trustless, decentralized, cryptographically secure protocol for cross-chain atomic swaps of Aave lending positions (aTokens). It enables holders of lending positions (aTokens) in Aave to securely exchange aTokens for other aTokens, or any ERC20 token between any chain that supports AaveV3. 
 
-For example, someone can use this project to trustlessly swap their aTokens on Avalanche for USDC on Polygon - or aTokens on Ethereum for aTokens on Avalanche. 
+For example, someone can use an AALPS to trustlessly swap their aTokens on Avalanche for USDC on Polygon - or aTokens on Ethereum for aTokens on Avalanche. 
 
-We refer to the mechanism as the Atomic Aave Lending Position Swap (AALPS) - users can trustlessly swap a specified number of aTokens on one chain for a corresponding number of aTokens on another chain. The outcome is full interoperability between any EVM chain for market-making of Aave liquidity positions.
+We refer to the mechanism as the Atomic Aave Lending Position Swap (AALPS). The outcome is full interoperability between any EVM chains for Aave liquidity positions. ✨👻
 
 ## How does it work?
 AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing of a cryptographic secret and time-constraints on specific actions. Here are the steps for completing an AALPS. It ensures that all parties funds' remain safe throughout the lifecycle of the transaction.
@@ -58,7 +58,7 @@ Before you get started, ensure you have the following installed:
 - Node.js (version 16.20.0 or higher)
 - NPM (Node Package Manager)
 - Hardhat (version 2.19.1)
-- I am using WSL2 as my terminal
+- I used WSL2 as my terminal
 
 Installation
 To set up the Atomic Aave Lending Swap project on your local machine, follow these steps:
