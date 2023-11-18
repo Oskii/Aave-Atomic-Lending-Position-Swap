@@ -43,6 +43,8 @@ AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing 
 - If Party A fails to reveal the solution before Party B's deadline, Party B can reclaim their locked assets, as the agreement becomes void.
 - Similarly, if Party B does not claim Party A's assets after the solution is revealed and before Party A's deadline, Party A can reclaim their locked assets.
 
+### Flow of an AALPS between two parties
+
 ![image](https://github.com/Oskii/aave-cross-chain-lending-position-swaps/assets/30426408/cd835243-1552-4873-8a1e-aa950cb94d2a)
 
 ## Features Demonstrated
