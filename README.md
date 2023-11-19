@@ -59,10 +59,10 @@ npx hardhat test
 
 ### Example Use Case
 
-- Jimmy has an AaveV3 lending position of 50 DAI on Ethereum, and so holds 50 aDAI.
-- Sandra has an AaveV3 lending position of 0.001 WBTC on Arbitrum, and so holds aWBTC.
+- Alice has an AaveV3 lending position of 50 DAI on Ethereum, and so holds 50 aDAI.
+- Bob has an AaveV3 lending position of 0.001 WBTC on Arbitrum, and so holds aWBTC.
 
-Both Jimmy and Sandra agree that they would like to exchange positions with each other, and use AALPS to trustlessly and securely exchange their aTokens. Even though their positions are cross-chain and using different assets, Jimmy and Sandra are able to exchange their positions trustlessly and securely.
+Both Alice and Bob agree that they would like to exchange positions with each other, and use AALPS to trustlessly and securely exchange their aTokens. Even though their positions are cross-chain and using different assets, Alice and Bob are able to exchange their positions trustlessly and securely.
 
 ## How does it work?
 
@@ -102,10 +102,17 @@ AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing 
 
 ![image](https://github.com/Oskii/aave-cross-chain-lending-position-swaps/assets/30426408/cd835243-1552-4873-8a1e-aa950cb94d2a)
 
-## Features Demonstrated
+## Live & Verified Contracts
 
-- Cross-chain atomic swap functionality between Ethereum Sepolia testnet and Polygon Mumbai testnet.
-- Secure and trustless cryptographic method, which we call **the Atomic Aave Lending Swap method**.
+### Polygon Mumbai 
+
+https://mumbai.polygonscan.com/address/0x0Ac42b02BFE612454Ea6706Ad910e4d8AF79076e#code
+
+### Ethereum Sepolia
+
+https://sepolia.etherscan.io/address/0x537D205A880ea1d927Acb2cb88d16B6D017bE46f#code
+
+## Cross-chain swap using AALPS between Polygon Mumbai and Ethereum Sepolia
 
 
 
