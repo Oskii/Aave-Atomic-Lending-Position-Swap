@@ -56,14 +56,6 @@ npx hardhat test
 
 ![image](https://github.com/Oskii/aave-cross-chain-lending-position-swaps/assets/30426408/e9045dbe-58f2-4e6c-b88b-9031907263f3)
 
-
-### Example Use Case
-
-- Alice has an AaveV3 lending position of 50 DAI on Ethereum, and so holds 50 aDAI.
-- Bob has an AaveV3 lending position of 0.001 WBTC on Arbitrum, and so holds aWBTC.
-
-Both Alice and Bob agree that they would like to exchange positions with each other, and use AALPS to trustlessly and securely exchange their aTokens. Even though their positions are cross-chain and using different assets, Alice and Bob are able to exchange their positions trustlessly and securely.
-
 ## How does it work?
 
 AALPS leverages a Secure Exchange Protocol (SEP) that relies on one-way hashing of a cryptographic secret and time-constraints on specific actions. Here are the steps for completing an AALPS. It ensures that all parties funds' remain safe throughout the lifecycle of the transaction.
@@ -137,3 +129,10 @@ https://sepolia.etherscan.io/tx/0xdc8e27d3a43991fa7b80a20c338a6bb05ed64b6a8430eb
 |----|-----------------|---------|--------------------------------------------------------------|
 | 0  | _aalpsInstanceId | bytes32 | 0x282690b71e5c914d8964f239a5d9b9d3bb73ada523ae0eb9be5683ec1f01ea64 |
 | 1  | _key            | bytes32 | 0xc69f07ec6be26b07ff53788ee2ddb717b5ac87d77b8d865a03e7909513fbdf27 |
+
+## Further Work
+
+- With more time, I would have liked to create a front-end with a real-time order book that could match users, and instantly finalize AALPS programatically.
+- Strict enforcement of deadlines. For now there are dangers involved with hanging transactions. If a transaction hangs and ends up being finalized after the deadline, funds are at risk.
+- Extended support for non-evm chains. Chains like bitcoin, litecoin and other UTXOs have a scripting language that can support all the features included here.
+- Deploy contracts on all EVM chains, including Avalanche, Arbitrum, Optimistic Ethereum, etc.
