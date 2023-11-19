@@ -119,7 +119,7 @@ This project has been used to successfully transfer aWMatic and aWETH positions 
 1. Alice locks up 0.001 aWMATIC on the Mumbai testnet
 https://mumbai.polygonscan.com/tx/0x65dc595303973ff8e8a189b2319a23167ae6457c5ad4d982f97344e0b4431901
 
-2. Bob locks up 0.00.1 aWETH on the Sepolia testnet
+2. Bob locks up 0.001 aWETH on the Sepolia testnet
 https://sepolia.etherscan.io/tx/0x1b245dc9c3ef0738aff9b82572320b118fe5f6930076aa8ef8b24ac203153997
 
 3. Alice withdraws the aWMATIC exposing the secret _key value
