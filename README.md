@@ -6,7 +6,7 @@ Welcome to the Atomic Aave Lending Position Swap (AALPS) project!
 
 This project demonstrates a completely trustless, decentralized, cryptographically secure protocol for cross-chain atomic swaps of Aave lending positions (aTokens). It enables holders of lending positions (aTokens) in Aave to securely exchange aTokens for other aTokens, or any ERC20 token between any chain that supports AaveV3.
 
-For example, someone can use an AALPS to trustlessly swap their aTokens on Avalanche for USDC on Polygon - or aTokens on Ethereum for aTokens on Avalanche.
+For example, someone can use an AALPS to trustlessly swap their aTokens on Avalanche for USDC on Polygon - or aTokens on Ethereum for aTokens on Avalanche. (For the purposes of this demo, I have deployed the protocol exclusively on Mumbai and Sepolia, but it would work on any EVM chain)
 
 We refer to the mechanism as the Atomic Aave Lending Position Swap (AALPS). The outcome is full interoperability between any EVM chains for trading Aave liquidity positions. ✨👻
 
