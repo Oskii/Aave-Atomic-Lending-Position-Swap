@@ -114,5 +114,26 @@ https://sepolia.etherscan.io/address/0x537D205A880ea1d927Acb2cb88d16B6D017bE46f#
 
 ## Cross-chain swap using AALPS between Polygon Mumbai and Ethereum Sepolia
 
+This project has been used to successfully transfer aWMatic and aWETH positions between Polygon Mumbai and Ethereum Sepolia respectively. See the following transactions on the respective blockchains for a detailed history
 
+1. Alice locks up 0.001 aWMATIC on the Mumbai testnet
+https://mumbai.polygonscan.com/tx/0x65dc595303973ff8e8a189b2319a23167ae6457c5ad4d982f97344e0b4431901
 
+2. Bob locks up 0.00.1 aWETH on the Sepolia testnet
+https://sepolia.etherscan.io/tx/0x1b245dc9c3ef0738aff9b82572320b118fe5f6930076aa8ef8b24ac203153997
+
+3. Alice withdraws the aWMATIC exposing the secret _key value
+https://mumbai.polygonscan.com/tx/0xfc88c84a449bdab4071e10fc117c181ae7d963c225ac6f68b42cd83c22e75544
+
+| #  | Name            | Type    | Data                                                         |
+|----|-----------------|---------|--------------------------------------------------------------|
+| 0  | _aalpsInstanceId | bytes32 | 0xc1099f01b38d76e06fb085f84ea3a479ab7cb7e6977c2df9c9c38970f61b7543 |
+| 1  | _key            | bytes32 | 0xc69f07ec6be26b07ff53788ee2ddb717b5ac87d77b8d865a03e7909513fbdf27 |
+
+4. Bob captures the exposed _key value and uses it to withdraw the aWETH
+https://sepolia.etherscan.io/tx/0xdc8e27d3a43991fa7b80a20c338a6bb05ed64b6a8430eb6b0d8a1d8db29a6d35
+
+| #  | Name            | Type    | Data                                                         |
+|----|-----------------|---------|--------------------------------------------------------------|
+| 0  | _aalpsInstanceId | bytes32 | 0x282690b71e5c914d8964f239a5d9b9d3bb73ada523ae0eb9be5683ec1f01ea64 |
+| 1  | _key            | bytes32 | 0xc69f07ec6be26b07ff53788ee2ddb717b5ac87d77b8d865a03e7909513fbdf27 |

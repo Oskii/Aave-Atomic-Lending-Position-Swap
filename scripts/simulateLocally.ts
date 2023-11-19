@@ -1,12 +1,7 @@
 const hre = require("hardhat");
 
 async function main() {
-	/**
-	 *  - Jimmy (Party A) has an AaveV3 lending position of 50 DAI on Ethereum, and so holds 50 aDAI.
-	 *  - Sandra (Party B) has an AaveV3 lending position of 0.001 WBTC on Arbitrum, and so holds aWBTC.
-	 */
-
-	// Deploy the mock ERC20 token
+    
 	const Token = await hre.ethers.getContractFactory("MockaToken");
 	const tokenA = await Token.deploy("Mock aDAI", "aDai", 18);
 	const tokenB = await Token.deploy("Mock aWrappedBitcoin", "aWBTC", 18);
@@ -110,7 +105,7 @@ async function main() {
 
 	const txReceipt = await createAALPSProposal.wait();
 	const proposalCreatedEvent = txReceipt.events.find(
-		(event) => event.event === "AALPSERC20Lockup",
+		(event: any) => event.event === "AALPSERC20Lockup",
 	);
 	const proposalId = proposalCreatedEvent.args.agreementId;
 
@@ -136,7 +131,7 @@ async function main() {
 
 	const txReceiptB = await createAALPSProposalB.wait();
 	const proposalCreatedEventB = txReceiptB.events.find(
-		(event) => event.event === "AALPSERC20Lockup",
+		(event: any) => event.event === "AALPSERC20Lockup",
 	);
 	const proposalIdB = proposalCreatedEventB.args.agreementId;
 

@@ -13,19 +13,23 @@ const config: HardhatUserConfig = {
 		target: "ethers-v5",
 	},
 	networks: {
-		// Example of Ethereum Mainnet
-		mumbai: {
-			url: process.env.MUMBAI_RPC_URL,
-			accounts:
-				process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-		},
-		// Example of Rinkeby Testnet
 		sepolia: {
-			url: process.env.SEPOLIA_RPC_URL,
-			accounts:
-				process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-		},
+            url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.SEPOLIA_ALCHEMY_KEY}`, // Replace with your Alchemy API key
+            accounts: [process.env.PRIVATE_KEY_BOB || ""],
+        },
+    
+        polygonMumbai: {
+            url: `https://polygon.llamarpc.com`,
+            //url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.MUMBAI_ALCHEMY_KEY}`, // Replace with your Alchemy API key
+            accounts: [process.env.PRIVATE_KEY_ALICE || ""],
+        },
 	},
+    etherscan: {
+        apiKey:{
+            sepolia: process.env.SEPOLIA_ETHERSCAN_API_KEY || "",
+            polygonMumbai: process.env.MUMBAI_ETHERSCAN_API_KEY || "",
+        }
+      },
 };
 
 export default config;
