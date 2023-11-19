@@ -137,3 +137,51 @@ https://sepolia.etherscan.io/tx/0xdc8e27d3a43991fa7b80a20c338a6bb05ed64b6a8430eb
 |----|-----------------|---------|--------------------------------------------------------------|
 | 0  | _aalpsInstanceId | bytes32 | 0x282690b71e5c914d8964f239a5d9b9d3bb73ada523ae0eb9be5683ec1f01ea64 |
 | 1  | _key            | bytes32 | 0xc69f07ec6be26b07ff53788ee2ddb717b5ac87d77b8d865a03e7909513fbdf27 |
+
+## Cross-chain swap using AALPS between Arbitrum Goerli and Ethereum Sepolia
+
+1. Alice locks up 0.0001 aARbAWTH on Arbitrum Goerli
+https://goerli.arbiscan.io/tx/0xe74420df5d5b8fb6a4b287170e116058e212dcef2d763b4abc92c6f12a05271b
+
+2. Bob locks up 0.0001 aWETH on the Sepolia testnet
+https://sepolia.etherscan.io/tx/0xb8e8b27f318c0f0660ca34f6aec075c68a7643c462545d93a85dbb3051702460
+
+3. Alice withdraws aWETH on the Sepolia testnet
+https://sepolia.etherscan.io/tx/0x70eea970f048b1d4ea47c86dd9b27ba12ce499965a39f0019a1de87b12c14144
+
+4. Bob withdraws aArbWETH on Arbitrum Goerli
+https://goerli.arbiscan.io/tx/0x921ece8e324bd949217700ca58e1d3d9b7ccd2672dc4d6fca7ddeb919289d4e1
+
+The following is the logs detailing the individual steps of the entire swap
+```
+------------------------------------------------------
+👻 Checking balances of participants
+------------------------------------------------------
+[arbitrumGoerli]: Balance of Alice (0xDf7827462B486c37e29A4b319c2B432413a14c39) is 0.01 aWrappedETH
+[arbitrumGoerli]: Balance of Bob (0x4f74f405E4b3527224ecAA517C49CeC95376E81B) is 0.01 aWrappedETH
+[sepolia]: Balance of Alice (0xDf7827462B486c37e29A4b319c2B432413a14c39) is 0.1 aWrappedETH
+[sepolia]: Balance of Bob (0x4f74f405E4b3527224ecAA517C49CeC95376E81B) is 0.05 aWrappedETH
+------------------------------------------------------
+👻 Starting cross-chain swap of aTokens! [sepolia aWETH <---> arbitrum aWETH]
+------------------------------------------------------
+[arbitrum goerli]: Alice created secret bytes32 0xc69f07ec6be26b07ff53788ee2ddb717b5ac87d77b8d865a03e7909513fbdf27
+[arbitrum goerli]: Alice created secret hash 0x665590a4932d1f62ff520bbcbb8d9145b627ad8c2ab116ec1c0c75782d94d543
+[arbitrum goerli]: Approval Transaction hash: 0x0452ee3beba0f359195f3175ffc3cda3e1706b8db77a5a1161276d7d97944fba
+[arbitrum goerli]: Transaction was mined in block number: 55902432
+[arbitrum goerli]: Alice created a new AALPS proposal on Arbitrum Goerli. Transaction hash:  0xe74420df5d5b8fb6a4b287170e116058e212dcef2d763b4abc92c6f12a05271b
+[sepolia]: Bob approved tokens
+[sepolia]: Bob created a new AALPS proposal on Sepolia. Transaction hash:  0xb8e8b27f318c0f0660ca34f6aec075c68a7643c462545d93a85dbb3051702460
+[sepolia]: Got Bob's proposalId 0xeff4ef8ad20a880d6c391f912a83db48e60c49e230fc8f52737e9feb140a71c1
+[sepolia]: Alice withdrew Bob's funds on Sepolia. Transaction hash:  0x70eea970f048b1d4ea47c86dd9b27ba12ce499965a39f0019a1de87b12c14144
+[sepolia]: Got the AALPSInstance from proposalId 0xeff4ef8ad20a880d6c391f912a83db48e60c49e230fc8f52737e9feb140a71c1 to get the exposed secret
+[sepolia]: The publicly available secret is 0xc69f07ec6be26b07ff53788ee2ddb717b5ac87d77b8d865a03e7909513fbdf27
+[arbitrum goerli]: Bob withdrew Alice's funds on Arbitrum Goerli. Transaction hash:  0x921ece8e324bd949217700ca58e1d3d9b7ccd2672dc4d6fca7ddeb919289d4e1
+------------------------------------------------------
+👻 Aave Atomic Liquidity Position Swap Complete!
+👻 Checking balances of participants
+------------------------------------------------------
+[arbitrumGoerli]: Balance of Alice (0xDf7827462B486c37e29A4b319c2B432413a14c39) is 0.0099 aWrappedETH
+[arbitrumGoerli]: Balance of Bob (0x4f74f405E4b3527224ecAA517C49CeC95376E81B) is 0.0101 aWrappedETH
+[sepolia]: Balance of Alice (0xDf7827462B486c37e29A4b319c2B432413a14c39) is 0.100100000000000001 aWrappedETH
+[sepolia]: Balance of Bob (0x4f74f405E4b3527224ecAA517C49CeC95376E81B) is 0.0499 aWrappedETH
+```
