@@ -47,7 +47,7 @@ Then in the first terminal type
 npx hardhat run scripts/simulate.ts
 ```
 
-## Tests Passing
+## All Tests are Passing
 
 Run the tests by typing the following from the root directory
 ```bash
